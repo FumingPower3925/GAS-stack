@@ -1,4 +1,4 @@
-# Security meets high performance simplicity
+# Security meets highly performant simplicity
 
 Leveraging the simplicity of Alpine JS CSP, with the performance of golang.
 

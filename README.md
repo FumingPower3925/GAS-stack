@@ -21,4 +21,5 @@ This is the base of a highly secure web stack.
 - [X] It lets you build almost anything **without additional dependencies**, just gomponents and Alpine JS csp, that's it
 - [X] It can work with the **strictest CSP policies**
 - [X] If correctly build, all **javascript will have SRI**
-- [X] **Server-Side Logic by Default** 
+- [X] **Server-Side Logic by Default**
+- [X] All content is **automatically escaped**

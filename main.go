@@ -4,7 +4,6 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/go-chi/chi/v5"
 	g "maragu.dev/gomponents"
 	c "maragu.dev/gomponents/components"
 	h "maragu.dev/gomponents/html"
@@ -12,7 +11,7 @@ import (
 
 func homePage() g.Node {
 	return c.HTML5(c.HTML5Props{
-		Title: "Test",
+		Title: "GAS Stack",
 		Head: []g.Node{
 			h.Script(
 				h.Defer(),
@@ -48,16 +47,13 @@ func homePage() g.Node {
 }
 
 func main() {
-	r := chi.NewRouter()
+	http.Handle("GET /static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	r.Handle(`/static/*`, http.StripPrefix(`/static/`, http.FileServer(http.Dir(`static`))))
-
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Security-Policy",
-			"default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none';")
+	http.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none';")
 		homePage().Render(w)
 	})
 
 	log.Println("Server listening on :8080")
-	log.Fatal(http.ListenAndServe(":8080", r))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }

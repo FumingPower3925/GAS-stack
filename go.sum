@@ -1,4 +1,2 @@
-github.com/go-chi/chi/v5 v5.1.0 h1:acVI1TYaD+hhedDJ3r54HyA6sExp3HfXq7QWEEY/xMw=
-github.com/go-chi/chi/v5 v5.1.0/go.mod h1:DslCQbL2OYiznFReuXYUmQ2hGd1aDpCnlMNITLSKoi8=
 maragu.dev/gomponents v1.0.0 h1:eeLScjq4PqP1l+r5z/GC+xXZhLHXa6RWUWGW7gSfLh4=
 maragu.dev/gomponents v1.0.0/go.mod h1:oEDahza2gZoXDoDHhw8jBNgH+3UR5ni7Ur648HORydM=
